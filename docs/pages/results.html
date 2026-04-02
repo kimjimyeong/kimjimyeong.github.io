@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thesis Introduction | Results and Performance</title>
+  <title>학위논문 소개 | 결과 및 성능</title>
   <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
   <header class="site-header">
     <div class="site-header-inner">
       <a class="brand" href="../index.html">
-        <span class="brand-title">Master's Thesis Project Page</span>
-        <span class="brand-subtitle">Simple academic homepage format</span>
+        <span class="brand-title">석사학위논문 소개 페이지</span>
+        <span class="brand-subtitle">Graduate Thesis Project Page</span>
       </a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="../index.html">Home</a>
-        <a href="motivation.html">Motivation</a>
-        <a href="research.html">Research</a>
-        <a class="current" href="results.html">Results</a>
-        <a href="references.html">References</a>
-        <a href="resources.html">Resources</a>
+      <nav class="site-nav" aria-label="주요 메뉴">
+        <a href="../index.html">메인</a>
+        <a href="motivation.html">연구 동기</a>
+        <a href="research.html">연구 내용</a>
+        <a class="current" href="results.html">결과 및 성능</a>
+        <a href="references.html">참고문헌</a>
+        <a href="resources.html">자료</a>
       </nav>
     </div>
   </header>
@@ -27,40 +27,41 @@
   <main class="page">
     <section class="hero">
       <p class="eyebrow">Pages 4-5</p>
-      <h1>Results and Performance</h1>
+      <h1>결과 및 성능</h1>
       <p>
-        Present the outcome of the thesis in a clear academic format. This page can include quantitative metrics, visual comparisons,
-        and a brief interpretation of the findings.
+        본 페이지에는 제안한 강화학습 기반 자원 최적화 방식의 실험 결과와 성능 비교 내용을 정리한다.
       </p>
     </section>
 
-    <section class="info-grid">
-      <article>
-        <h3>Main Findings</h3>
-        <p>Add a concise summary of the most important results achieved by your research.</p>
-      </article>
-      <article>
-        <h3>Performance Metrics</h3>
-        <p>Insert values such as accuracy, error rate, runtime, efficiency, or other suitable evaluation indicators.</p>
-      </article>
-      <article>
-        <h3>Comparison</h3>
-        <p>Compare your method with baseline models, previous studies, or conventional techniques.</p>
-      </article>
+    <section class="doc-section">
+      <h2>주요 결과</h2>
+      <ul class="section-list">
+        <li>제안 기법이 기존 기준 방식 대비 어떤 항목에서 개선을 보였는지 요약한다.</li>
+        <li>스펙트럼 효율, 전송률, 자원 활용률, 지연 시간 등 핵심 성능 항목을 정리한다.</li>
+        <li>결과 해석 시 네트워크 조건에 따른 성능 차이도 함께 기술할 수 있다.</li>
+      </ul>
     </section>
 
-    <section class="card">
-      <h2>Interpretation</h2>
+    <section class="doc-section">
+      <h2>성능 비교</h2>
+      <ul class="section-list">
+        <li>비교 모델 또는 기존 연구와의 정량적 차이를 표 또는 그래프로 제시한다.</li>
+        <li>학습 안정성, 수렴 특성, 계산 효율 측면에서의 장단점을 추가로 설명할 수 있다.</li>
+        <li>필요한 경우 실제 수치와 그림은 이후 삽입할 수 있도록 본 구조를 유지한다.</li>
+      </ul>
+    </section>
+
+    <section class="doc-section">
+      <h2>해석 및 의의</h2>
       <div class="placeholder">
-        Example placeholder:
-        "The proposed approach achieved improved performance compared with the baseline, particularly under the target operating conditions."
+        이 부분에는 실험 결과가 의미하는 바와 제안 방식의 장점, 한계, 향후 개선 가능성을 요약해 넣으면 된다.
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="site-footer-inner">
-      <p>Results and performance page.</p>
+      <p>결과 및 성능 페이지.</p>
     </div>
   </footer>
 </body>

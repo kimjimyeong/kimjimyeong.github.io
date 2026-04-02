@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thesis Introduction | Motivation</title>
+  <title>학위논문 소개 | 연구 동기</title>
   <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
   <header class="site-header">
     <div class="site-header-inner">
       <a class="brand" href="../index.html">
-        <span class="brand-title">Master's Thesis Project Page</span>
-        <span class="brand-subtitle">Simple academic homepage format</span>
+        <span class="brand-title">석사학위논문 소개 페이지</span>
+        <span class="brand-subtitle">Graduate Thesis Project Page</span>
       </a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="../index.html">Home</a>
-        <a class="current" href="motivation.html">Motivation</a>
-        <a href="research.html">Research</a>
-        <a href="results.html">Results</a>
-        <a href="references.html">References</a>
-        <a href="resources.html">Resources</a>
+      <nav class="site-nav" aria-label="주요 메뉴">
+        <a href="../index.html">메인</a>
+        <a class="current" href="motivation.html">연구 동기</a>
+        <a href="research.html">연구 내용</a>
+        <a href="results.html">결과 및 성능</a>
+        <a href="references.html">참고문헌</a>
+        <a href="resources.html">자료</a>
       </nav>
     </div>
   </header>
@@ -27,39 +27,42 @@
   <main class="page">
     <section class="hero">
       <p class="eyebrow">Page 1</p>
-      <h1>Research Motivation</h1>
+      <h1>연구 동기</h1>
       <p>
-        Use this page to introduce the problem context, explain why the research topic matters, and describe the gap that your thesis addresses.
+        본 페이지는 RSMA 적용 5G MIOM 네트워크 환경에서 자원 최적화가 왜 중요한지, 그리고 강화학습 기반 접근이 필요한 배경이 무엇인지를 설명하기 위한 부분이다.
       </p>
     </section>
 
-    <section class="info-grid">
-      <article>
-        <h3>Background</h3>
-        <p>Summarize the broader technical or social background of the problem and show why the topic deserves attention.</p>
-      </article>
-      <article>
-        <h3>Problem Statement</h3>
-        <p>State the core limitation of current methods, systems, or environments that motivated your study.</p>
-      </article>
-      <article>
-        <h3>Need for Research</h3>
-        <p>Explain the expected benefits of solving the problem and the reason this thesis is timely or necessary.</p>
-      </article>
+    <section class="doc-section">
+      <h2>연구 배경</h2>
+      <ul class="section-list">
+        <li>5G 통신 환경에서는 다수의 사용자와 기지국 자원을 동시에 고려해야 하므로 자원 할당 문제가 매우 복잡해진다.</li>
+        <li>RSMA 기반 전송 기법은 스펙트럼 효율과 사용자 간 간섭 관리 측면에서 유의미한 장점을 제공할 수 있다.</li>
+        <li>그러나 실제 네트워크 환경에서는 채널 상태, 전력 분배, 사용자 요구 조건이 동시에 변하므로 고정된 최적화 기법만으로는 대응에 한계가 있다.</li>
+      </ul>
     </section>
 
-    <section class="card">
-      <h2>Writing Prompt</h2>
+    <section class="doc-section">
+      <h2>문제 인식</h2>
+      <ul class="section-list">
+        <li>기존 방식은 수학적 최적화에 의존하는 경우가 많아 계산 비용이 크고 실시간 적용에 불리할 수 있다.</li>
+        <li>다변수 환경에서 모든 상태를 정교하게 반영하기 어렵고, 동적인 네트워크 변화에 유연하게 대처하기 어렵다.</li>
+        <li>따라서 상태 변화에 따라 정책을 갱신할 수 있는 학습 기반 접근이 요구된다.</li>
+      </ul>
+    </section>
+
+    <section class="doc-section">
+      <h2>연구 필요성</h2>
       <div class="placeholder">
-        Example placeholder:
-        "Existing approaches show limited performance under [specific condition], creating a need for a more effective and practical solution."
+        이 부분에는 왜 강화학습이 RSMA 적용 5G MIOM 네트워크의 자원 할당 문제에 적합한지,
+        그리고 본 연구가 기존 연구 대비 어떤 차별성을 갖는지를 추후 서술하면 된다.
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="site-footer-inner">
-      <p>Research motivation page.</p>
+      <p>연구 동기 페이지.</p>
     </div>
   </footer>
 </body>
