@@ -1,13 +1,14 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
 
 :root {
-  --bg: #fbfbfa;
+  --bg: #f7f5f1;
   --paper: #ffffff;
   --text: #171717;
   --muted: #666666;
-  --line: #d8d8d2;
-  --strong-line: #bfbfb8;
-  --accent: #0f4c81;
+  --line: #ddd8cf;
+  --strong-line: #c9c2b7;
+  --accent: #5a6b7c;
+  --accent-soft: #ece8e1;
   --max-width: 860px;
 }
 
@@ -21,7 +22,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
+  background:
+    linear-gradient(180deg, #faf8f4 0%, var(--bg) 100%);
   color: var(--text);
   font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
 }
@@ -36,8 +38,9 @@ a:hover {
 }
 
 .site-header {
-  background: var(--paper);
+  background: rgba(255, 255, 255, 0.92);
   border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(6px);
 }
 
 .site-header-inner,
@@ -83,11 +86,14 @@ a:hover {
 
 .site-nav a {
   color: var(--muted);
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
 }
 
 .site-nav a.current {
   color: var(--text);
   font-weight: 700;
+  border-bottom-color: var(--strong-line);
 }
 
 .page {
@@ -97,6 +103,16 @@ a:hover {
 .hero {
   padding-bottom: 18px;
   border-bottom: 1px solid var(--strong-line);
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 2px;
+  margin: 0 auto 18px;
+  background: var(--accent-soft);
 }
 
 .hero-home {
@@ -161,6 +177,11 @@ li {
   gap: 16px;
   margin-top: 18px;
   font-size: 0.96rem;
+}
+
+.paper-links a {
+  color: var(--text);
+  border-bottom: 1px solid var(--line);
 }
 
 section {
@@ -242,7 +263,7 @@ section {
 
 .site-footer {
   border-top: 1px solid var(--line);
-  background: var(--paper);
+  background: rgba(255, 255, 255, 0.72);
 }
 
 .site-footer-inner {
@@ -259,6 +280,11 @@ section {
 
   .hero-home {
     text-align: left;
+  }
+
+  .hero::before {
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .hero-home h1 {
