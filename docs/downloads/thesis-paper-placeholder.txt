@@ -1,0 +1,2 @@
+Place your final thesis PDF in this folder.
+You can replace this text file with the real thesis file later.
