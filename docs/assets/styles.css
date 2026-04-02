@@ -1,14 +1,14 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
 
 :root {
-  --bg: #f7f5f1;
+  --bg: #fcfcfb;
   --paper: #ffffff;
-  --text: #171717;
-  --muted: #666666;
-  --line: #ddd8cf;
-  --strong-line: #c9c2b7;
-  --accent: #5a6b7c;
-  --accent-soft: #ece8e1;
+  --text: #1a1a1a;
+  --muted: #5f6670;
+  --line: #d9dde3;
+  --strong-line: #c5ccd6;
+  --accent: #405d7a;
+  --accent-soft: #edf2f7;
   --max-width: 860px;
 }
 
@@ -22,7 +22,7 @@ html {
 
 body {
   margin: 0;
-  background: linear-gradient(180deg, #faf8f4 0%, var(--bg) 100%);
+  background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
   color: var(--text);
   font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
 }
@@ -63,8 +63,8 @@ a:hover {
   gap: 14px;
   padding: 6px 10px;
   font-size: 0.94rem;
-  background: rgba(236, 232, 225, 0.52);
-  border: 1px solid rgba(201, 194, 183, 0.65);
+  background: rgba(237, 242, 247, 0.5);
+  border: 1px solid rgba(197, 204, 214, 0.75);
   border-radius: 999px;
 }
 
@@ -85,7 +85,7 @@ a:hover {
   color: var(--text);
   font-weight: 700;
   background: rgba(255, 255, 255, 0.95);
-  box-shadow: inset 0 0 0 1px rgba(201, 194, 183, 0.75);
+  box-shadow: inset 0 0 0 1px rgba(197, 204, 214, 0.88);
 }
 
 .page {
@@ -216,10 +216,10 @@ section {
 .abstract-block {
   margin-top: 8px;
   padding: 18px 20px 16px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(248, 245, 240, 0.92) 100%);
-  border: 1px solid rgba(201, 194, 183, 0.82);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(246, 248, 251, 0.96) 100%);
+  border: 1px solid rgba(197, 204, 214, 0.86);
   border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(77, 68, 55, 0.04);
+  box-shadow: 0 10px 30px rgba(56, 70, 90, 0.04);
 }
 
 .abstract-block p {
