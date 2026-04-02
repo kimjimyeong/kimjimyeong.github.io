@@ -1,14 +1,14 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
 
 :root {
-  --bg: #fcfcfb;
+  --bg: #fcfbf8;
   --paper: #ffffff;
   --text: #1a1a1a;
-  --muted: #5f6670;
-  --line: #d9dde3;
-  --strong-line: #c5ccd6;
-  --accent: #405d7a;
-  --accent-soft: #edf2f7;
+  --muted: #625d56;
+  --line: #ddd6cb;
+  --strong-line: #cbbfb0;
+  --accent: #7f6c58;
+  --accent-soft: #efe8de;
   --max-width: 860px;
 }
 
@@ -22,7 +22,7 @@ html {
 
 body {
   margin: 0;
-  background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+  background: linear-gradient(180deg, #fefdfb 0%, var(--bg) 100%);
   color: var(--text);
   font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
 }
@@ -217,8 +217,8 @@ section {
 .abstract-block {
   margin-top: 8px;
   padding: 18px 20px 16px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(246, 248, 251, 0.96) 100%);
-  border: 1px solid rgba(197, 204, 214, 0.86);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(250, 247, 242, 0.98) 100%);
+  border: 1px solid rgba(203, 191, 176, 0.92);
   border-radius: 0;
   box-shadow: none;
   border-left: 3px solid var(--accent);
