@@ -123,7 +123,8 @@ a:hover {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   margin-top: 0;
   color: var(--text);
   line-height: 1.35;
@@ -144,6 +145,11 @@ h2 {
 
 h3 {
   font-size: 1.02rem;
+  margin-bottom: 8px;
+}
+
+h4 {
+  font-size: 0.98rem;
   margin-bottom: 8px;
 }
 
@@ -209,7 +215,7 @@ section {
 
 .doc-section + .doc-section {
   border-top: 1px solid var(--line);
-  padding-top: 22px;
+  padding-top: 24px;
 }
 
 .hero p,
@@ -300,20 +306,17 @@ section {
   font-size: 0.94rem;
 }
 
-.formula-math .katex-display {
+.formula-math .katex-display,
+.formula-card .katex-display {
   margin: 0;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 6px 0;
+  padding: 0;
 }
 
 .formula-card:not(.formula-table) .formula-title,
 .formula-card:not(.formula-table) .formula-note {
   display: none;
-}
-
-.formula-card:not(.formula-table) .formula-math .katex-display {
-  padding: 0;
 }
 
 .formula-table {
@@ -335,6 +338,69 @@ section {
 
 .formula-table .formula-math {
   font-size: 0.94rem;
+}
+
+.subsection-block {
+  margin-top: 24px;
+  padding-left: 18px;
+  border-left: 1px solid var(--line);
+}
+
+.subsection-block:first-of-type {
+  margin-top: 0;
+}
+
+.nested-block {
+  margin-top: 18px;
+  padding-left: 16px;
+  border-left: 1px solid rgba(203, 191, 176, 0.85);
+}
+
+.formula-stack {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.paper-table-wrap {
+  margin-top: 18px;
+  overflow-x: auto;
+}
+
+.paper-table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.paper-table caption {
+  caption-side: top;
+  margin-bottom: 10px;
+  color: var(--text);
+  font-weight: 700;
+  text-align: left;
+}
+
+.paper-table thead th {
+  padding: 10px 12px;
+  color: var(--text);
+  font-weight: 700;
+  text-align: left;
+  border-top: 1.5px solid var(--strong-line);
+  border-bottom: 1px solid var(--strong-line);
+}
+
+.paper-table tbody td,
+.paper-table tbody th {
+  padding: 9px 12px;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+.paper-table tbody tr:last-child td,
+.paper-table tbody tr:last-child th {
+  border-bottom: 1.5px solid var(--strong-line);
 }
 
 .paper-figure {

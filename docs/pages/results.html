@@ -5,23 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>학위논문 소개 | 실험 방법 및 결과</title>
   <link rel="stylesheet" href="../assets/styles.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/katex.min.css" integrity="sha384-UA8juhPf75SzzAMA/4fo3yOU7sBJ0om7SCD2GHq0fZqZco6tr1UCV7nUbk9J90JM" crossorigin="anonymous">
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/katex.min.js" integrity="sha384-Tt7wBxLKwSzFVRET4O4U9H6v8MNaQ/CjN2FMP4xFm0ErrFu6aNqoonRVW5W40iGI" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/contrib/auto-render.min.js" integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous"></script>
-  <script defer>
-    document.addEventListener("DOMContentLoaded", function () {
-      renderMathInElement(document.body, {
-        delimiters: [
-          { left: "$$", right: "$$", display: true },
-          { left: "\\(", right: "\\)", display: false },
-          { left: "\\[", right: "\\]", display: true }
-        ],
-        throwOnError: false,
-        strict: false,
-        fleqn: true
-      });
-    });
-  </script>
 </head>
 <body>
   <header class="site-header">
@@ -46,138 +29,263 @@
 
     <section class="doc-section">
       <h2>5.1 실험 방법</h2>
-      <p>
-        실험은 3GPP UMi Street-Canyon 기반의 다중 셀 환경에서 수행했으며, 5개 기지국과 60명의 사용자를 배치했다.
-        제안 기법은 Fixed-action, PPO, SAC, TD3와 비교해 학습 안정성과 제어 성능을 함께 확인했다.
-      </p>
-      <div class="formula-table">
-        <p class="formula-title">Table 1. Simulation Parameters</p>
-        <div class="formula-table-group">
-          <p class="formula-table-heading">Network Configuration</p>
-          <div class="formula-math">
-\[
-\begin{array}{ll}
-\textbf{Parameter} & \textbf{Value} \\
-\hline
-\text{Deployment area} & 800~\text{m} \times 800~\text{m} \\
-\text{Inter-site distance (ISD)} & 250~\text{m} \\
-\text{Number of Base stations / Total Users} & \text{5 / 60} \\
-\text{Base station transmit power / Antenna gain} & \text{33 dBm / 5 dBi} \\
-\text{Antenna configuration} & 4 \times 1
-\end{array}
-\]
-          </div>
+
+      <div class="subsection-block">
+        <p>
+          실험은 3GPP UMi Street-Canyon 기반의 다중 셀 환경에서 수행했으며, 5개 기지국과 60명의 사용자를 배치했다.
+          제안 기법은 Fixed-action, PPO, SAC, TD3와 비교해 학습 안정성과 제어 성능을 함께 확인했다.
+        </p>
+
+        <div class="paper-table-wrap">
+          <table class="paper-table">
+            <caption>Table 1. Simulation Parameters</caption>
+            <thead>
+              <tr>
+                <th scope="col">Category</th>
+                <th scope="col">Parameter</th>
+                <th scope="col">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="5">Network</td>
+                <td>Deployment area</td>
+                <td>800 m x 800 m</td>
+              </tr>
+              <tr>
+                <td>Inter-site distance (ISD)</td>
+                <td>250 m</td>
+              </tr>
+              <tr>
+                <td>Number of Base stations / Total Users</td>
+                <td>5 / 60</td>
+              </tr>
+              <tr>
+                <td>Base station transmit power / Antenna gain</td>
+                <td>33 dBm / 5 dBi</td>
+              </tr>
+              <tr>
+                <td>Antenna configuration</td>
+                <td>4 x 1</td>
+              </tr>
+              <tr>
+                <td rowspan="4">Channel</td>
+                <td>Carrier frequency / Bandwidth</td>
+                <td>3.5 GHz / 100 MHz</td>
+              </tr>
+              <tr>
+                <td>Pathloss / Shadowing</td>
+                <td>TR 38.901 NLOS / 7.82 dB</td>
+              </tr>
+              <tr>
+                <td>CSIT error factor</td>
+                <td>0.1</td>
+              </tr>
+              <tr>
+                <td>Hysteresis / Time-to-Trigger</td>
+                <td>3 dB / 320 ms</td>
+              </tr>
+              <tr>
+                <td rowspan="3">Traffic</td>
+                <td>Mobility / Traffic model</td>
+                <td>Street-grid / Constant bit rate</td>
+              </tr>
+              <tr>
+                <td>Data rate per User</td>
+                <td>8 Mbps</td>
+              </tr>
+              <tr>
+                <td>User speed groups / Count</td>
+                <td>{0.5-1.5, 1.5-3.0, 4.0-8.0} m/s / 20 each</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="formula-table-group">
-          <p class="formula-table-heading">Channel and Handover</p>
-          <div class="formula-math">
-\[
-\begin{array}{ll}
-\textbf{Parameter} & \textbf{Value} \\
-\hline
-\text{Carrier frequency / Bandwidth} & \text{3.5 GHz / 100 MHz} \\
-\text{Pathloss / Shadowing} & \text{TR 38.901 NLOS / 7.82 dB} \\
-\text{CSIT error factor} & 0.1 \\
-\text{Hysteresis / Time-to-Trigger} & \text{3 dB / 320 ms}
-\end{array}
-\]
-          </div>
-        </div>
-        <div class="formula-table-group">
-          <p class="formula-table-heading">Traffic and Mobility</p>
-          <div class="formula-math">
-\[
-\begin{array}{ll}
-\textbf{Parameter} & \textbf{Value} \\
-\hline
-\text{Mobility / Traffic model} & \text{Street-grid / Constant bit rate} \\
-\text{Data rate per User} & 8~\text{Mbps} \\
-\text{User speed groups} & \text{\{0.5-1.5, 1.5-3.0, 4.0-8.0\} m/s} \\
-\text{User count per group} & 20
-\end{array}
-\]
-          </div>
+
+        <div class="paper-table-wrap">
+          <table class="paper-table">
+            <caption>Table 2. TD-MPC2 Hyperparameters</caption>
+            <thead>
+              <tr>
+                <th scope="col">Category</th>
+                <th scope="col">Hyperparameter</th>
+                <th scope="col">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="4">Learning</td>
+                <td>Batch size</td>
+                <td>64</td>
+              </tr>
+              <tr>
+                <td>Learning rate</td>
+                <td>5.4041e-4</td>
+              </tr>
+              <tr>
+                <td>Discount factor</td>
+                <td>0.99</td>
+              </tr>
+              <tr>
+                <td>Max gradient norm</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td rowspan="5">Architecture</td>
+                <td>Encoder dim / layers</td>
+                <td>256 / 2</td>
+              </tr>
+              <tr>
+                <td>Latent dim</td>
+                <td>256</td>
+              </tr>
+              <tr>
+                <td>Value nets / dropout</td>
+                <td>5 / 0.01</td>
+              </tr>
+              <tr>
+                <td>SimNorm dim</td>
+                <td>8</td>
+              </tr>
+              <tr>
+                <td>Number of bins (HL-Gauss)</td>
+                <td>101</td>
+              </tr>
+              <tr>
+                <td rowspan="4">Planning</td>
+                <td>Horizon</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>Iterations</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>Samples</td>
+                <td>256</td>
+              </tr>
+              <tr>
+                <td>Elites</td>
+                <td>64</td>
+              </tr>
+              <tr>
+                <td rowspan="2">Objective</td>
+                <td>Consistency loss scale</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>Reward / Value loss scale</td>
+                <td>0.1 / 0.1</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
 
     <section class="doc-section">
       <h2>5.2 실험 결과</h2>
-      <h3>5.2.1 시스템 성능 평가 및 비교 분석</h3>
-      <p>
-        제안 기법은 학습 수렴 속도와 최종 성능 모두에서 안정적인 결과를 보였고, 특히 처리량 향상뿐 아니라 부하 불균형과 핸드오버 실패율도 함께 줄이는 경향을 확인했다.
-      </p>
-      <figure class="paper-figure">
-        <img src="../images/figure3.png" alt="Figure 3">
-        <figcaption>Figure 3.</figcaption>
-      </figure>
-      <figure class="paper-figure">
-        <img src="../images/figure4.png" alt="Figure 4">
-        <figcaption>Figure 4.</figcaption>
-      </figure>
-    </section>
 
-    <section class="doc-section">
-      <h3>5.2.2 제안 기법의 효용성 분석</h3>
-      <p>
-        RSMA 분할 비율만 제어하거나 CIO만 제어하는 경우와 비교했을 때, 두 제어를 함께 사용하는 구성이 가장 균형 잡힌 성능을 보였다.
-        이는 전송 구조와 핸드오버 제어를 분리하지 않고 공동 최적화하는 접근이 중요하다는 점을 보여준다.
-      </p>
-      <p>
-        보상 가중치를 바꾼 실험에서도 처리량과 부하 분산 사이의 상충관계가 확인됐으며, 본 연구의 설정은 두 지표를 함께 고려하는 절충점으로 작동했다.
-      </p>
-      <figure class="paper-figure">
-        <img src="../images/figure5.png" alt="Figure 5">
-        <figcaption>Figure 5.</figcaption>
-      </figure>
-      <figure class="paper-figure">
-        <img src="../images/figure6.png" alt="Figure 6">
-        <figcaption>Figure 6.</figcaption>
-      </figure>
-    </section>
-
-    <section class="doc-section">
-      <h3>5.2.3 이질 트래픽 환경에서의 일반화 성능 평가</h3>
-      <p>
-        학습 환경과 다른 트래픽 조건에서도 제안 기법은 비교적 안정적인 성능을 유지했다.
-        이는 특정 시나리오에만 맞춰진 정책이 아니라, 환경 변화에도 대응 가능한 제어 전략임을 시사한다.
-      </p>
-      <div class="formula-table">
-        <p class="formula-title">Table 3. Heterogeneous Traffic Group Parameters</p>
-        <div class="formula-math">
-\[
-\begin{array}{ll}
-\textbf{Parameter} & \textbf{Value} \\
-\hline
-\text{Number of User} & 60 \\
-\text{Mobility Speed} & 5.0~\text{m/s} \\
-\text{Group 1 Traffic (20 Users)} & \text{Constant bit rate, 8 Mbps} \\
-\text{Group 2 Traffic (20 Users)} & \text{Heavy-tailed ON/OFF, Mean 8 Mbps} \\
-\text{Group 3 Traffic (20 Users)} & \text{ON/OFF, Mean 8 Mbps}
-\end{array}
-\]
-        </div>
+      <div class="subsection-block">
+        <h3>5.2.1 시스템 성능 평가 및 비교 분석</h3>
+        <p>
+          제안 기법은 학습 수렴 속도와 최종 성능 모두에서 안정적인 결과를 보였고, 특히 처리량 향상뿐 아니라 부하 불균형과 핸드오버 실패율도 함께 줄이는 경향을 확인했다.
+        </p>
+        <figure class="paper-figure">
+          <img src="../images/figure3.png" alt="Figure 3">
+          <figcaption>Figure 3.</figcaption>
+        </figure>
+        <figure class="paper-figure">
+          <img src="../images/figure4.png" alt="Figure 4">
+          <figcaption>Figure 4.</figcaption>
+        </figure>
       </div>
-      <figure class="paper-figure">
-        <img src="../images/figure7.png" alt="Figure 7">
-        <figcaption>Figure 7.</figcaption>
-      </figure>
+
+      <div class="subsection-block">
+        <h3>5.2.2 제안 기법의 효용성 분석</h3>
+        <p>
+          RSMA 분할 비율만 제어하거나 CIO만 제어하는 경우와 비교했을 때, 두 제어를 함께 사용하는 구성이 가장 균형 잡힌 성능을 보였다.
+          이는 전송 구조와 핸드오버 제어를 분리하지 않고 공동 최적화하는 접근이 중요하다는 점을 보여준다.
+        </p>
+        <p>
+          보상 가중치를 바꾼 실험에서도 처리량과 부하 분산 사이의 상충관계가 확인됐으며, 본 연구의 설정은 두 지표를 함께 고려하는 절충점으로 작동했다.
+        </p>
+        <figure class="paper-figure">
+          <img src="../images/figure5.png" alt="Figure 5">
+          <figcaption>Figure 5.</figcaption>
+        </figure>
+        <figure class="paper-figure">
+          <img src="../images/figure6.png" alt="Figure 6">
+          <figcaption>Figure 6.</figcaption>
+        </figure>
+      </div>
+
+      <div class="subsection-block">
+        <h3>5.2.3 이질 트래픽 환경에서의 일반화 성능 평가</h3>
+        <p>
+          학습 환경과 다른 트래픽 조건에서도 제안 기법은 비교적 안정적인 성능을 유지했다.
+          이는 특정 시나리오에만 맞춰진 정책이 아니라, 환경 변화에도 대응 가능한 제어 전략임을 시사한다.
+        </p>
+
+        <div class="paper-table-wrap">
+          <table class="paper-table">
+            <caption>Table 3. Heterogeneous Traffic Group Parameters</caption>
+            <thead>
+              <tr>
+                <th scope="col">Parameter</th>
+                <th scope="col">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Number of User</td>
+                <td>60</td>
+              </tr>
+              <tr>
+                <td>Mobility Speed</td>
+                <td>5.0 m/s</td>
+              </tr>
+              <tr>
+                <td>Group 1 Traffic (20 Users)</td>
+                <td>Constant bit rate, 8 Mbps</td>
+              </tr>
+              <tr>
+                <td>Group 2 Traffic (20 Users)</td>
+                <td>Heavy-tailed ON/OFF, Mean 8 Mbps</td>
+              </tr>
+              <tr>
+                <td>Group 3 Traffic (20 Users)</td>
+                <td>ON/OFF, Mean 8 Mbps</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <figure class="paper-figure">
+          <img src="../images/figure7.png" alt="Figure 7">
+          <figcaption>Figure 7.</figcaption>
+        </figure>
+      </div>
     </section>
 
     <section class="doc-section">
       <h2>6. 결론 및 토의</h2>
-      <p>
-        본 연구는 RSMA 기반 전송 제어와 CIO 기반 부하 분산을 공동 최적화하는 프레임워크를 제안했고, 모델 기반 강화학습을 통해 처리량과 안정성을 함께 개선할 수 있음을 보였다.
-      </p>
-      <p>
-        향후에는 더 큰 네트워크 규모와 다양한 시간 척도 제어, 에너지 효율까지 포함하는 방향으로 확장 가능하다.
-      </p>
+      <div class="subsection-block">
+        <p>
+          본 연구는 RSMA 기반 전송 제어와 CIO 기반 부하 분산을 공동 최적화하는 프레임워크를 제안했고, 모델 기반 강화학습을 통해 처리량과 안정성을 함께 개선할 수 있음을 보였다.
+        </p>
+        <p>
+          향후에는 더 큰 네트워크 규모와 다양한 시간 척도 제어, 에너지 효율까지 포함하는 방향으로 확장 가능하다.
+        </p>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="site-footer-inner">
-      <p>최종 업데이트: 2026년 5월 12일</p>
+      <p>
+        Updated: 2026-05-12
+      </p>
     </div>
   </footer>
 </body>
