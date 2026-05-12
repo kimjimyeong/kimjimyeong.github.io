@@ -306,6 +306,26 @@ section {
   padding: 6px 0;
 }
 
+.formula-table {
+  display: grid;
+  gap: 14px;
+}
+
+.formula-table-group + .formula-table-group {
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.formula-table-heading {
+  margin-bottom: 6px;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.formula-table .formula-math {
+  font-size: 0.94rem;
+}
+
 .metric-card {
   background: linear-gradient(180deg, #fffdfa 0%, #f9f5ee 100%);
 }
