@@ -23,16 +23,18 @@
 
   <main class="page">
     <section class="hero hero-home">
+      <p class="eyebrow">M.S. Thesis Website</p>
       <h1>RSMA를 적용한 5G MIMO 네트워크에서의 강화학습 기반 자원 최적화 연구</h1>
       <p class="hero-meta">김지명</p>
-      <p class="hero-meta">정보융합공학과</p>
+      <p class="hero-meta">부산대학교 대학원 정보융합공학과</p>
       <p class="hero-meta">지도교수 유영환</p>
-      <p class="keyword-line"><strong>Keywords:</strong> 5G MIMO 네트워크, RSMA, 강화학습, 자원 최적화, 부하 분산</p>
+      <p class="hero-meta">2026년 8월 석사학위논문</p>
+      <p class="keyword-line"><strong>Keywords:</strong> 5G MIMO, RSMA, 강화학습, TD-MPC2, 교차 계층 제어</p>
       <div class="paper-links">
-        <a href="pages/resources.html">논문 파일</a>
-        <a href="pages/resources.html">시스템 코드</a>
-        <a href="pages/resources.html">시연 동영상</a>
-        <a href="pages/resources.html">실험 환경 및 데이터</a>
+        <a href="pages/motivation.html">연구 동기</a>
+        <a href="pages/research.html">연구 내용</a>
+        <a href="pages/results.html">결과 및 성능</a>
+        <a href="pages/resources.html">추가 자료</a>
       </div>
     </section>
 
@@ -40,22 +42,85 @@
       <h2>초록</h2>
       <div class="abstract-block">
         <p>
-          5G MIMO 네트워크 환경에서는 사용자 이동에 따른 핸드오버와 셀 간 간섭으로 인해 네트워크 상태가 실시간으로 변화하므로,
-          이에 대응할 수 있는 제어 기법이 요구된다. RSMA는 간섭 완화와 전송 효율 향상을 동시에 고려할 수 있는 기술로 주목받고 있으나,
-          기존 빔포밍, 전력 할당, 전송률 할당을 포함한 최적화 방식은 높은 연산 복잡도를 야기하며, 1-layer 구조에서는 공통 스트림이
-          열악한 사용자에 의해 제한되는 문제가 발생한다. 이러한 조건하에 RSMA 기반 물리계층 제어만으로는 네트워크 자원을 최적화하기 어렵고,
-          사용자 접속 및 부하 분산을 조정하는 네트워크 계층 제어가 함께 고려되어야 한다. 본 논문에서는 이러한 한계를 고려하여 PF metric과
-          channel spatial correlation을 반영한 저복잡도 사용자 선택 기반 RSMA 구조를 채택하고, 이를 5G MIMO 네트워크에
-          적용한 강화학습 기반 교차 계층 제어 기법을 제안한다. 제안 기법은 사용자 접속 및 부하 분산을 제어하는 CIO와 RSMA split ratio를
-          공동 최적화하여, 네트워크 처리율과 부하 분산 성능을 개선하는 것을 목표로 한다.
+          5G MIMO 네트워크에서는 사용자 이동과 셀 간 간섭 때문에 네트워크 상태가 계속 변한다. RSMA는 이런 환경에 유연하게 대응할 수
+          있지만, 기존 최적화 방식은 계산량이 크고 부하 분산까지 함께 다루기 어렵다.
         </p>
+        <p>
+          본 연구는 저복잡도 사용자 선택 기반 RSMA와 TD-MPC2 강화학습을 결합해 CIO와 RSMA 분할 비율을 함께 제어하는 방법을
+          제안한다. 그 결과 처리량 향상, 부하 불균형 감소, 핸드오버 실패율 완화를 동시에 확인했고, 이질적 트래픽 환경에서도 안정적인
+          성능을 보였다.
+        </p>
+      </div>
+    </section>
+
+    <section class="doc-section">
+      <h2>핵심 성과</h2>
+      <div class="metric-grid">
+        <article class="metric-card">
+          <p class="metric-value">23.25%</p>
+          <p class="metric-label">처리량 향상</p>
+          <p class="metric-detail">Fixed-action 대비 총 처리량 증가</p>
+        </article>
+        <article class="metric-card">
+          <p class="metric-value">28.71%</p>
+          <p class="metric-label">부하 불균형 감소</p>
+          <p class="metric-detail">셀 간 부하 편차를 더 안정적으로 제어</p>
+        </article>
+        <article class="metric-card">
+          <p class="metric-value">71.56%</p>
+          <p class="metric-label">HOF 감소</p>
+          <p class="metric-detail">연결 안정성 개선</p>
+        </article>
+        <article class="metric-card">
+          <p class="metric-value">1.5M</p>
+          <p class="metric-label">빠른 수렴</p>
+          <p class="metric-detail">약 1.5M step 부근에서 핵심 성능 확보</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="doc-section">
+      <h2>웹페이지 구성</h2>
+      <div class="section-grid">
+        <article class="info-card">
+          <h3>연구 동기</h3>
+          <p>왜 이 문제가 중요한지와 기존 접근의 한계를 짧게 소개한다.</p>
+        </article>
+        <article class="info-card">
+          <h3>연구 내용</h3>
+          <p>제안한 RSMA 구조와 강화학습 프레임워크를 개념 중심으로 정리한다.</p>
+        </article>
+        <article class="info-card">
+          <h3>결과 및 성능</h3>
+          <p>실험 설정과 핵심 수치를 중심으로 성능을 요약한다.</p>
+        </article>
+        <article class="info-card">
+          <h3>참고문헌 및 자료</h3>
+          <p>주요 참고문헌과 관련 사이트, 추후 공개할 자료 구성을 모아둔다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="doc-section">
+      <h2>대표 수식 위치</h2>
+      <div class="formula-grid">
+        <div class="asset-placeholder">
+          <p class="asset-label">수식 A 위치</p>
+          <p>전체 네트워크 성능 목적 함수 PNG 삽입 예정</p>
+          <p class="asset-hint">메인 페이지에서 연구 핵심을 한눈에 보여줄 대표 수식용</p>
+        </div>
+        <div class="asset-placeholder">
+          <p class="asset-label">수식 B 위치</p>
+          <p>강화학습 보상 함수 또는 상태-행동 개념 수식 PNG 삽입 예정</p>
+          <p class="asset-hint">제안 기법이 무엇을 기준으로 학습하는지 짧게 보여줄 용도</p>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="site-footer-inner">
-      <p>Last updated: April 2, 2026.</p>
+      <p>최종 업데이트: 2026년 5월 12일.</p>
     </div>
   </footer>
 </body>

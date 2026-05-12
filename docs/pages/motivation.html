@@ -25,27 +25,72 @@
     <section class="hero">
       <p class="eyebrow">Page 1</p>
       <h1>연구 동기</h1>
+      <p class="lead">이 연구가 어떤 문제의식에서 출발했는지 소개한다.</p>
     </section>
 
     <section class="doc-section">
-      <h2>연구 배경</h2>
-      <p></p>
+      <h2>왜 이 연구가 필요한가</h2>
+      <p>
+        5G 네트워크는 많은 사용자와 큰 데이터 트래픽을 동시에 감당해야 한다. 특히 다중 셀 MIMO 환경에서는 사용자 이동과 간섭이 계속
+        바뀌기 때문에, 고정된 방식의 자원 할당만으로는 안정적인 성능을 유지하기 어렵다.
+      </p>
+      <p>
+        RSMA는 이런 환경에서 간섭을 더 유연하게 다룰 수 있는 기술이지만, 실제 네트워크에서는 전송 효율뿐 아니라 셀 간 부하 균형과
+        핸드오버 안정성도 함께 고려해야 한다.
+      </p>
+      <div class="asset-placeholder">
+        <p class="asset-label">그림 1 위치</p>
+        <p>RSMA 기반 다중 셀 MIMO 시스템 모델 PNG 삽입 예정</p>
+        <p class="asset-hint">기지국, 사용자, 간섭, 공통/전용 스트림 구조를 한눈에 보여주는 그림 권장</p>
+      </div>
     </section>
 
     <section class="doc-section">
-      <h2>문제 인식</h2>
-      <p></p>
+      <h2>기존 접근의 한계</h2>
+      <p>
+        기존 연구는 RSMA 자체의 전송 성능이나 부하 분산만을 따로 다루는 경우가 많았다. 하지만 실제 환경에서는 두 문제가 동시에 얽혀
+        있기 때문에 어느 한쪽만 개선해서는 전체 성능을 충분히 끌어올리기 어렵다.
+      </p>
+      <ul class="section-list">
+        <li>기존 RSMA 최적화는 계산량이 커서 실시간 적용이 쉽지 않다.</li>
+        <li>채널 상태만 보고 사용자를 선택하면 특정 사용자가 계속 불리해질 수 있다.</li>
+        <li>부하 분산만 단독으로 수행하면 처리량이나 연결 안정성이 떨어질 수 있다.</li>
+      </ul>
     </section>
 
     <section class="doc-section">
-      <h2>연구 필요성</h2>
-      <p></p>
+      <h2>이 연구가 풀고자 한 핵심</h2>
+      <p>
+        본 연구는 RSMA의 전송 효율과 CIO 기반 부하 분산을 하나의 문제로 묶어, 처리량과 공평성, 연결 안정성을 함께 개선하는 방향을
+        제안한다. 쉽게 말해 "더 빠르고, 더 균형 잡히고, 더 안정적인 5G 제어 방법"을 찾는 연구라고 할 수 있다.
+      </p>
+      <div class="callout">
+        <p>첫째, 복잡도가 낮은 RSMA 사용자 선택 구조를 설계한다.</p>
+        <p>둘째, RSMA 분할 비율과 CIO를 함께 제어하는 구조를 만든다.</p>
+        <p>셋째, 강화학습으로 이 구조가 실제로 유효한지 성능을 검증한다.</p>
+      </div>
+    </section>
+
+    <section class="doc-section">
+      <h2>이 페이지의 수식 자리</h2>
+      <div class="formula-grid">
+        <div class="asset-placeholder">
+          <p class="asset-label">수식 1 위치</p>
+          <p>연구 문제를 설명하는 전체 목적 함수 요약 PNG 삽입 예정</p>
+          <p class="asset-hint">처리량과 부하 분산을 함께 본다는 점을 보여주기 좋은 위치</p>
+        </div>
+        <div class="asset-placeholder">
+          <p class="asset-label">수식 2 위치</p>
+          <p>부하 불균형 지표 또는 PF metric 요약 PNG 삽입 예정</p>
+          <p class="asset-hint">기존 접근의 한계와 제안 방향을 연결하는 보조 수식용</p>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="site-footer-inner">
-      <p></p>
+      <p>최종 업데이트: 2026년 5월 12일.</p>
     </div>
   </footer>
 </body>
