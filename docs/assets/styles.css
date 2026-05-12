@@ -280,10 +280,11 @@ section {
 }
 
 .formula-card {
-  padding: 18px;
-  background: linear-gradient(180deg, #fffdf8 0%, #f8f4ed 100%);
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
+  margin-top: 18px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
 .formula-title {
@@ -306,9 +307,19 @@ section {
   padding: 6px 0;
 }
 
+.formula-card:not(.formula-table) .formula-title,
+.formula-card:not(.formula-table) .formula-note {
+  display: none;
+}
+
+.formula-card:not(.formula-table) .formula-math .katex-display {
+  padding: 0;
+}
+
 .formula-table {
   display: grid;
   gap: 14px;
+  margin-top: 18px;
 }
 
 .formula-table-group + .formula-table-group {
