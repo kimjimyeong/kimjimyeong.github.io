@@ -5,23 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RSMA를 적용한 5G MIMO 네트워크에서의 강화학습 기반 자원 최적화 연구</title>
   <link rel="stylesheet" href="assets/styles.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/katex.min.css" integrity="sha384-UA8juhPf75SzzAMA/4fo3yOU7sBJ0om7SCD2GHq0fZqZco6tr1UCV7nUbk9J90JM" crossorigin="anonymous">
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/katex.min.js" integrity="sha384-Tt7wBxLKwSzFVRET4O4U9H6v8MNaQ/CjN2FMP4xFm0ErrFu6aNqoonRVW5W40iGI" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/contrib/auto-render.min.js" integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous"></script>
-  <script defer>
-    document.addEventListener("DOMContentLoaded", function () {
-      renderMathInElement(document.body, {
-        delimiters: [
-          { left: "$$", right: "$$", display: true },
-          { left: "\\(", right: "\\)", display: false },
-          { left: "\\[", right: "\\]", display: true }
-        ],
-        throwOnError: false,
-        strict: false,
-        fleqn: false
-      });
-    });
-  </script>
 </head>
 <body>
   <header class="site-header">
@@ -47,17 +30,11 @@
       <p class="hero-meta">지도교수 유영환</p>
       <p class="hero-meta">2026년 8월 석사학위논문</p>
       <p class="keyword-line"><strong>Keywords:</strong> 5G MIMO, RSMA, 강화학습, TD-MPC2, 교차 계층 제어</p>
-      <div class="paper-links">
-        <a href="pages/motivation.html">연구 동기</a>
-        <a href="pages/research.html">연구 내용</a>
-        <a href="pages/results.html">결과 및 성능</a>
-        <a href="pages/resources.html">추가 자료</a>
-      </div>
     </section>
 
     <section class="doc-section">
       <h2>초록</h2>
-      <div class="abstract-block">
+      <div class="reading-block">
         <p>
           5G MIMO 네트워크에서는 사용자 이동, 셀 간 간섭, 이기종 트래픽이 동시에 발생하기 때문에 네트워크 상태가 시시각각 변한다.
           RSMA는 이런 환경에서 간섭을 유연하게 다룰 수 있는 유망한 전송 기법이지만, 실제 네트워크 운용에서는 전송 효율만이 아니라
@@ -72,79 +49,62 @@
     </section>
 
     <section class="doc-section">
-      <h2>핵심 성과</h2>
-      <div class="metric-grid">
-        <article class="metric-card">
-          <p class="metric-value">23.25%</p>
-          <p class="metric-label">처리량 향상</p>
-          <p class="metric-detail">Fixed-action 대비 총 처리량 증가</p>
-        </article>
-        <article class="metric-card">
-          <p class="metric-value">28.71%</p>
-          <p class="metric-label">부하 불균형 감소</p>
-          <p class="metric-detail">셀 간 부하 편차를 더 안정적으로 제어</p>
-        </article>
-        <article class="metric-card">
-          <p class="metric-value">71.56%</p>
-          <p class="metric-label">HOF 감소</p>
-          <p class="metric-detail">연결 안정성 개선</p>
-        </article>
-        <article class="metric-card">
-          <p class="metric-value">1.5M</p>
-          <p class="metric-label">빠른 수렴</p>
-          <p class="metric-detail">약 1.5M step 부근에서 핵심 성능 확보</p>
-        </article>
+      <h2>연구 배경 및 문제의식</h2>
+      <div class="reading-block">
+        <p>
+          다중 셀 5G MIMO 환경에서는 사용자 수 변화, 셀 간 간섭, 이기종 트래픽, 이동성 때문에
+          네트워크 상태가 지속적으로 변한다. 따라서 물리 계층의 전송 효율만 높이는 방식으로는
+          실제 운용에서 요구되는 안정성과 균형을 충분히 확보하기 어렵다.
+        </p>
+        <p>
+          본 연구는 RSMA의 전송 측 장점과 CIO 기반 부하 분산 제어를 하나의 문제로 결합해,
+          처리량과 셀 간 균형, 핸드오버 안정성을 함께 개선할 수 있는 학습 기반 접근이 필요한 이유를
+          논문 전반의 출발점으로 삼는다.
+        </p>
       </div>
     </section>
 
     <section class="doc-section">
-      <h2>논문 구성</h2>
-      <div class="section-grid">
-        <article class="info-card">
-          <h3>1. 서론</h3>
-          <p>다중 셀 5G MIMO 환경에서 왜 RSMA와 부하 분산을 함께 다뤄야 하는지, 그리고 본 연구가 해결하려는 문제를 정리한다.</p>
-        </article>
-        <article class="info-card">
-          <h3>3장 시스템 모델</h3>
-          <p>네트워크 및 채널 모델, RSMA 전송 구조, A3 기반 핸드오버, 처리량 및 부하 정의를 통해 최적화 대상의 구조를 설명한다.</p>
-        </article>
-        <article class="info-card">
-          <h3>4장 최적화 프레임워크</h3>
-          <p>멀티 타임스케일 교차 계층 제어 구조를 MDP로 정식화하고, TD-MPC2를 이용해 이를 어떻게 학습하는지 요약한다.</p>
-        </article>
-        <article class="info-card">
-          <h3>5-6장 실험 및 결론</h3>
-          <p>실험 환경과 TD-MPC2 설정, 비교 실험 결과, 효용성 분석, 이질 트래픽 환경 일반화 결과, 결론을 정리한다.</p>
-        </article>
+      <h2>방법 개요</h2>
+      <div class="reading-block">
+        <p>
+          제안 방법은 저복잡도 사용자 선택 기반 RSMA 구조를 사용해 공통 스트림 복호 부담과 계산 복잡도를 줄이면서,
+          RSMA 분할 비율과 CIO를 공동 제어하는 교차 계층 최적화 문제를 구성한다.
+        </p>
+        <p>
+          이를 위해 네트워크 제어 문제를 MDP로 정식화하고, 잠재 공간 예측과 계획 기반 추론이 가능한 TD-MPC2를 적용해
+          시변 네트워크 환경에서도 빠르게 적응하는 정책을 학습하도록 설계했다.
+        </p>
       </div>
     </section>
 
     <section class="doc-section">
-      <h2>대표 수식</h2>
-      <div class="formula-grid">
-        <div class="formula-card">
-          <p class="formula-title">공동 목적 함수</p>
-          <div class="formula-math">
-\[
-J = w_T \tilde{T} + w_L \left(1 - \tilde{\sigma}\right),
-\qquad
-w_T + w_L = 1
-\]
-          </div>
-          <p class="formula-note">정규화된 총 처리량과 부하 불균형 지표를 함께 고려해, 높은 전송 효율과 네트워크 균형을 동시에 추구한다.</p>
-        </div>
-        <div class="formula-card">
-          <p class="formula-title">공동 제어 벡터</p>
-          <div class="formula-math">
-\[
-\mathbf{a}_t =
-\left[
-  c_1(t), \eta_1(t), \ldots, c_{|M|}(t), \eta_{|M|}(t)
-\right]
-\]
-          </div>
-          <p class="formula-note">각 셀의 CIO와 RSMA 분할 비율을 하나의 행동 벡터로 묶어 함께 최적화한다.</p>
-        </div>
+      <h2>결과 요약</h2>
+      <div class="reading-block">
+        <p>
+          시뮬레이션 결과 제안 기법은 기존 비교 기법 대비 총 처리량을 개선하면서도 셀 간 부하 불균형과 핸드오버 실패율을 함께 줄였다.
+          특히 Fixed-action 기준으로 처리량은 23.25% 향상됐고, 부하 불균형은 28.71% 감소했으며, 핸드오버 실패율도 크게 완화됐다.
+        </p>
+        <p>
+          또한 학습 수렴 속도 측면에서도 비교적 빠르게 안정 구간에 도달했고, 학습에 사용하지 않은 이질 트래픽 환경에서도
+          성능 저하가 제한적이어서 일반화 가능성을 확인할 수 있었다.
+        </p>
+      </div>
+    </section>
+
+    <section class="doc-section">
+      <h2>페이지 안내</h2>
+      <div class="reading-block">
+        <p>
+          아래 페이지들은 논문의 각 장과 대응하도록 구성되어 있으며, 연구 배경부터 방법, 실험 결과, 참고문헌과 자료까지
+          순서대로 확인할 수 있도록 정리했다.
+        </p>
+        <ul class="section-list">
+          <li><a href="pages/motivation.html">연구 동기</a>: 연구 배경, 연구 목적, 연구의 기여점을 요약한다.</li>
+          <li><a href="pages/research.html">연구 내용</a>: 시스템 모델과 TD-MPC2 기반 자원 최적화 프레임워크를 설명한다.</li>
+          <li><a href="pages/results.html">결과 및 성능</a>: 실험 환경, 비교 결과, 효용성 분석, 일반화 성능을 정리한다.</li>
+          <li><a href="pages/references.html">참고문헌</a> / <a href="pages/resources.html">자료</a>: 논문 기반 참고문헌과 부가 자료 구성을 제공한다.</li>
+        </ul>
       </div>
     </section>
   </main>
