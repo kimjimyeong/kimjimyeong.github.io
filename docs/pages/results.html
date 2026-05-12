@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>학위논문 소개 | 결과 및 성능</title>
+  <title>학위논문 소개 | 실험 방법 및 결과</title>
   <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
@@ -23,16 +23,16 @@
 
   <main class="page">
     <section class="hero">
-      <p class="eyebrow">Pages 4-5</p>
-      <h1>결과 및 성능</h1>
-      <p class="lead">실험 환경은 간단히 요약하고, 소개 페이지에 필요한 핵심 결과만 중심적으로 정리한다.</p>
+      <p class="eyebrow">Chapters 5-6</p>
+      <h1>실험 방법 및 결과</h1>
+      <p class="lead">실험 설정, 주요 성능 결과, 추가 분석, 결론 및 토의를 논문 구조에 맞춰 요약한다.</p>
     </section>
 
     <section class="doc-section">
-      <h2>평가 환경 요약</h2>
+      <h2>5.1 실험 방법</h2>
       <p>
-        실험은 3GPP UMi Street-Canyon 기반의 다중 셀 환경에서 수행되었으며, 5개 기지국과 60명의 사용자를 배치했다. 사용자는 서로
-        다른 이동 속도를 가지며, 제안 기법은 Fixed-action, PPO, SAC, TD3와 비교되었다.
+        실험은 3GPP UMi Street-Canyon 기반의 다중 셀 환경에서 수행되었으며, 5개 기지국과 60명의 사용자를 배치했다.
+        제안 기법은 Fixed-action, PPO, SAC, TD3와 비교되었다.
       </p>
       <div class="table-wrap">
         <table class="data-table">
@@ -66,10 +66,24 @@
           </tbody>
         </table>
       </div>
+      <div class="formula-grid">
+        <div class="asset-placeholder">
+          <p class="asset-label">수식 9 위치</p>
+          <p>성능 지표 정의식 PNG 삽입 예정</p>
+          <p class="asset-hint">처리량 또는 부하 불균형 계산식을 넣기 적합한 위치</p>
+        </div>
+        <div class="asset-placeholder">
+          <p class="asset-label">수식 10 위치</p>
+          <p>보상 가중치 또는 평가 기준식 PNG 삽입 예정</p>
+          <p class="asset-hint">실험 결과 해석의 기준이 되는 수식용</p>
+        </div>
+      </div>
     </section>
 
     <section class="doc-section">
-      <h2>핵심 결과</h2>
+      <h2>5.2 실험 결과</h2>
+
+      <h3>5.2.1 시스템 성능 평가 및 비교 분석</h3>
       <p>
         제안 기법은 학습 수렴 속도와 최종 성능 모두에서 좋은 결과를 보였다. 특히 처리량 향상뿐 아니라 부하 불균형과 핸드오버 실패율도
         함께 줄였다는 점이 핵심이다.
@@ -98,16 +112,14 @@
       </div>
       <div class="asset-placeholder">
         <p class="asset-label">그림 3 위치</p>
-        <p>학습 수렴 곡선 PNG 삽입 예정</p>
+        <p>학습 단계에 따른 에피소드 리턴 수렴 곡선 PNG 삽입 예정</p>
       </div>
       <div class="asset-placeholder">
         <p class="asset-label">그림 4 - 6 위치</p>
         <p>처리량, 부하 불균형, HOF 비교 PNG 삽입 예정</p>
       </div>
-    </section>
 
-    <section class="doc-section">
-      <h2>추가 분석</h2>
+      <h3>5.2.2 제안 기법의 효용성 분석</h3>
       <p>
         RSMA 분할 비율만 제어하거나 CIO만 제어한 경우와 비교했을 때, 두 제어를 함께 사용할 때 가장 균형 잡힌 성능이 나타났다.
         즉, 전송 구조와 핸드오버 제어를 분리하지 않고 같이 다루는 것이 제안 기법의 중요한 장점이다.
@@ -120,26 +132,8 @@
         <p class="asset-label">그림 7 - 10 위치</p>
         <p>개별 제어 동작 비교와 보상 가중치 변화 결과 PNG 삽입 예정</p>
       </div>
-    </section>
 
-    <section class="doc-section">
-      <h2>이 페이지의 수식 자리</h2>
-      <div class="formula-grid">
-        <div class="asset-placeholder">
-          <p class="asset-label">수식 9 위치</p>
-          <p>실험에서 재사용하는 목적 함수 또는 보상 가중치식 PNG 삽입 예정</p>
-          <p class="asset-hint">결과 해석의 기준이 되는 수식을 다시 보여주고 싶을 때 사용</p>
-        </div>
-        <div class="asset-placeholder">
-          <p class="asset-label">수식 10 위치</p>
-          <p>성능 지표 정의식 PNG 삽입 예정</p>
-          <p class="asset-hint">처리량, 부하 불균형, HOF 중 강조하고 싶은 지표용</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="doc-section">
-      <h2>이질 트래픽 환경에서도 유효한가</h2>
+      <h3>5.2.3 이질 트래픽 환경에서의 일반화 성능 평가</h3>
       <p>
         학습 환경과 다른 트래픽 조건에서도 제안 기법은 안정적인 성능을 유지했다. 이는 특정 시나리오에만 맞춰진 방법이 아니라,
         환경이 달라져도 비교적 일관된 제어가 가능하다는 점을 보여준다.
@@ -172,14 +166,21 @@
           </tbody>
         </table>
       </div>
-      <p>
-        소개 수준에서 보면, 제안 기법은 이질적 트래픽 환경에서도 처리량과 부하 분산 성능을 함께 유지했고, 연결 안정성 역시
-        비교 기준보다 우수한 결과를 보였다.
-      </p>
       <div class="asset-placeholder">
         <p class="asset-label">그림 11 - 13 위치</p>
         <p>이질 트래픽 환경 결과 PNG 삽입 예정</p>
       </div>
+    </section>
+
+    <section class="doc-section">
+      <h2>6. 결론 및 토의</h2>
+      <p>
+        본 연구는 RSMA 기반 전송 제어와 CIO 기반 부하 분산을 공동 최적화하는 프레임워크를 제안하고, 모델 기반 강화학습을 통해
+        처리량과 공평성, 안정성을 함께 개선할 수 있음을 보였다.
+      </p>
+      <p>
+        향후에는 대규모 환경으로의 확장성, 더 다양한 시간 척도 제어, 사용자별 전력 최적화 등을 포함하는 방향으로 발전시킬 수 있다.
+      </p>
     </section>
   </main>
 

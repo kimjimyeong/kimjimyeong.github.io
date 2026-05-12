@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>학위논문 소개 | 연구 동기</title>
+  <title>학위논문 소개 | 서론</title>
   <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
@@ -23,66 +23,62 @@
 
   <main class="page">
     <section class="hero">
-      <p class="eyebrow">Page 1</p>
-      <h1>연구 동기</h1>
-      <p class="lead">이 연구가 어떤 문제의식에서 출발했는지 소개한다.</p>
+      <p class="eyebrow">Chapter 1</p>
+      <h1>서론</h1>
+      <p class="lead">논문의 출발점인 연구 배경, 연구 목적, 기여점, 전체 구성을 소개한다.</p>
     </section>
 
     <section class="doc-section">
-      <h2>왜 이 연구가 필요한가</h2>
+      <h2>1.1 연구 배경</h2>
       <p>
-        5G 네트워크는 많은 사용자와 큰 데이터 트래픽을 동시에 감당해야 한다. 특히 다중 셀 MIMO 환경에서는 사용자 이동과 간섭이 계속
-        바뀌기 때문에, 고정된 방식의 자원 할당만으로는 안정적인 성능을 유지하기 어렵다.
+        5G MIMO 네트워크는 대용량 트래픽, 사용자 이동성, 셀 간 간섭이 동시에 존재하는 환경이다. 이 때문에 단순한 자원 분배만으로는
+        전송 효율과 네트워크 안정성을 함께 확보하기 어렵다.
       </p>
       <p>
-        RSMA는 이런 환경에서 간섭을 더 유연하게 다룰 수 있는 기술이지만, 실제 네트워크에서는 전송 효율뿐 아니라 셀 간 부하 균형과
-        핸드오버 안정성도 함께 고려해야 한다.
+        RSMA는 간섭을 유연하게 다룰 수 있는 전송 방식으로 주목받고 있지만, 실제 네트워크 운용에서는 물리 계층의 전송 성능뿐 아니라
+        핸드오버와 부하 분산까지 함께 고려할 필요가 있다.
       </p>
-      <div class="asset-placeholder">
-        <p class="asset-label">그림 1 위치</p>
-        <p>RSMA 기반 다중 셀 MIMO 시스템 모델 PNG 삽입 예정</p>
-        <p class="asset-hint">기지국, 사용자, 간섭, 공통/전용 스트림 구조를 한눈에 보여주는 그림 권장</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>1.2 연구 목적</h2>
+      <p>
+        본 연구의 목적은 다중 셀 MIMO 환경에서 RSMA 전송 구조와 CIO 기반 부하 분산을 함께 제어하여, 처리량과 셀 간 공평성,
+        그리고 연결 안정성을 동시에 개선하는 것이다.
+      </p>
+      <div class="callout">
+        <p>저복잡도 사용자 선택 기반 RSMA 구조를 도입한다.</p>
+        <p>RSMA 분할 비율과 CIO를 하나의 공동 제어 문제로 구성한다.</p>
+        <p>강화학습 기반으로 동적인 네트워크 환경에 맞는 제어 정책을 학습한다.</p>
       </div>
     </section>
 
     <section class="doc-section">
-      <h2>기존 접근의 한계</h2>
-      <p>
-        기존 연구는 RSMA 자체의 전송 성능이나 부하 분산만을 따로 다루는 경우가 많았다. 하지만 실제 환경에서는 두 문제가 동시에 얽혀
-        있기 때문에 어느 한쪽만 개선해서는 전체 성능을 충분히 끌어올리기 어렵다.
-      </p>
+      <h2>1.3 연구의 기여점</h2>
       <ul class="section-list">
-        <li>기존 RSMA 최적화는 계산량이 커서 실시간 적용이 쉽지 않다.</li>
-        <li>채널 상태만 보고 사용자를 선택하면 특정 사용자가 계속 불리해질 수 있다.</li>
-        <li>부하 분산만 단독으로 수행하면 처리량이나 연결 안정성이 떨어질 수 있다.</li>
+        <li>공통 스트림 병목과 계산 복잡도를 줄이기 위한 저복잡도 RSMA 구조를 제안했다.</li>
+        <li>RSMA 분할 비율과 CIO를 연계한 교차 계층 공동 제어 모델을 구성했다.</li>
+        <li>멀티 타임스케일 제어 구조에 TD-MPC2를 적용해 빠른 수렴과 안정적 제어를 확인했다.</li>
+        <li>처리량, 부하 분산, HOF 측면에서 의미 있는 성능 개선을 보였다.</li>
       </ul>
     </section>
 
     <section class="doc-section">
-      <h2>이 연구가 풀고자 한 핵심</h2>
+      <h2>1.4 논문 개요</h2>
       <p>
-        본 연구는 RSMA의 전송 효율과 CIO 기반 부하 분산을 하나의 문제로 묶어, 처리량과 공평성, 연결 안정성을 함께 개선하는 방향을
-        제안한다. 쉽게 말해 "더 빠르고, 더 균형 잡히고, 더 안정적인 5G 제어 방법"을 찾는 연구라고 할 수 있다.
+        제2장에서는 관련 연구를 정리하고, 제3장에서는 시스템 모델을 소개한다. 제4장에서는 TD-MPC2 기반 자원 최적화 프레임워크를
+        설명하며, 제5장에서는 실험 방법과 결과를 제시한다. 마지막 제6장에서는 결론과 향후 연구 방향을 정리한다.
       </p>
-      <div class="callout">
-        <p>첫째, 복잡도가 낮은 RSMA 사용자 선택 구조를 설계한다.</p>
-        <p>둘째, RSMA 분할 비율과 CIO를 함께 제어하는 구조를 만든다.</p>
-        <p>셋째, 강화학습으로 이 구조가 실제로 유효한지 성능을 검증한다.</p>
-      </div>
-    </section>
-
-    <section class="doc-section">
-      <h2>이 페이지의 수식 자리</h2>
       <div class="formula-grid">
         <div class="asset-placeholder">
           <p class="asset-label">수식 1 위치</p>
-          <p>연구 문제를 설명하는 전체 목적 함수 요약 PNG 삽입 예정</p>
-          <p class="asset-hint">처리량과 부하 분산을 함께 본다는 점을 보여주기 좋은 위치</p>
+          <p>연구 목적을 요약하는 전체 목적 함수 PNG 삽입 예정</p>
+          <p class="asset-hint">처리량과 부하 분산을 함께 고려한다는 점을 보여주기 좋음</p>
         </div>
         <div class="asset-placeholder">
           <p class="asset-label">수식 2 위치</p>
-          <p>부하 불균형 지표 또는 PF metric 요약 PNG 삽입 예정</p>
-          <p class="asset-hint">기존 접근의 한계와 제안 방향을 연결하는 보조 수식용</p>
+          <p>PF metric 또는 부하 불균형 지표 PNG 삽입 예정</p>
+          <p class="asset-hint">기존 한계와 제안 방향을 짧게 연결하는 보조 수식용</p>
         </div>
       </div>
     </section>
