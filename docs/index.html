@@ -5,6 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RSMA를 적용한 5G MIMO 네트워크에서의 강화학습 기반 자원 최적화 연구</title>
   <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/katex.min.css" integrity="sha384-UA8juhPf75SzzAMA/4fo3yOU7sBJ0om7SCD2GHq0fZqZco6tr1UCV7nUbk9J90JM" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/katex.min.js" integrity="sha384-Tt7wBxLKwSzFVRET4O4U9H6v8MNaQ/CjN2FMP4xFm0ErrFu6aNqoonRVW5W40iGI" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/contrib/auto-render.min.js" integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous"></script>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "\\(", right: "\\)", display: false },
+          { left: "\\[", right: "\\]", display: true }
+        ],
+        throwOnError: false,
+        strict: false,
+        fleqn: true
+      });
+    });
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -102,17 +119,30 @@
     </section>
 
     <section class="doc-section">
-      <h2>대표 수식 위치</h2>
+      <h2>대표 수식</h2>
       <div class="formula-grid">
-        <div class="asset-placeholder">
-          <p class="asset-label">수식 A 위치</p>
-          <p>전체 네트워크 성능 목적 함수 PNG 삽입 예정</p>
-          <p class="asset-hint">메인 페이지에서 연구 핵심을 한눈에 보여줄 대표 수식용</p>
+        <div class="formula-card">
+          <p class="formula-title">공동 목적 함수</p>
+          <div class="formula-math">
+\[
+J = w_T \tilde{T} + w_L \left(1 - \tilde{\sigma}\right),
+\qquad
+w_T + w_L = 1
+\]
+          </div>
+          <p class="formula-note">정규화된 처리량과 부하 불균형을 함께 고려하는 본 연구의 핵심 목적식이다.</p>
         </div>
-        <div class="asset-placeholder">
-          <p class="asset-label">수식 B 위치</p>
-          <p>강화학습 보상 함수 또는 상태-행동 개념 수식 PNG 삽입 예정</p>
-          <p class="asset-hint">제안 기법이 무엇을 기준으로 학습하는지 짧게 보여줄 용도</p>
+        <div class="formula-card">
+          <p class="formula-title">공동 제어 벡터</p>
+          <div class="formula-math">
+\[
+\mathbf{a}_t =
+\left[
+  c_1(t), \eta_1(t), \ldots, c_{|M|}(t), \eta_{|M|}(t)
+\right]
+\]
+          </div>
+          <p class="formula-note">각 셀의 CIO와 RSMA 분할 비율을 하나의 행동 벡터로 묶어 함께 최적화한다.</p>
         </div>
       </div>
     </section>

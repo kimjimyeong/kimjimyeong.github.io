@@ -279,6 +279,33 @@ section {
   border: 1px solid var(--line);
 }
 
+.formula-card {
+  padding: 18px;
+  background: linear-gradient(180deg, #fffdf8 0%, #f8f4ed 100%);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.formula-title {
+  margin-bottom: 10px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.formula-note {
+  margin-top: 10px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.formula-math .katex-display {
+  margin: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 6px 0;
+}
+
 .metric-card {
   background: linear-gradient(180deg, #fffdfa 0%, #f9f5ee 100%);
 }

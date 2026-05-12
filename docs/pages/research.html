@@ -5,6 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>학위논문 소개 | 연구 내용</title>
   <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/katex.min.css" integrity="sha384-UA8juhPf75SzzAMA/4fo3yOU7sBJ0om7SCD2GHq0fZqZco6tr1UCV7nUbk9J90JM" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/katex.min.js" integrity="sha384-Tt7wBxLKwSzFVRET4O4U9H6v8MNaQ/CjN2FMP4xFm0ErrFu6aNqoonRVW5W40iGI" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/contrib/auto-render.min.js" integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous"></script>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "\\(", right: "\\)", display: false },
+          { left: "\\[", right: "\\]", display: true }
+        ],
+        throwOnError: false,
+        strict: false,
+        fleqn: true
+      });
+    });
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -58,9 +75,17 @@
         제안 기법은 모든 사용자를 무겁게 최적화하는 대신, 사용자 선택 단계에서 PF 지표와 채널 공간 상관도를 함께 고려한다.
         이를 통해 공통 스트림 병목을 줄이면서도 특정 사용자에게 자원이 과도하게 몰리는 현상을 완화한다.
       </p>
-      <div class="asset-placeholder">
-        <p class="asset-label">수식 3 위치</p>
-        <p>RSMA 송신 신호와 전송률 정의 PNG 삽입 예정</p>
+      <div class="formula-card">
+        <p class="formula-title">RSMA 송신 신호</p>
+        <div class="formula-math">
+\[
+\mathbf{x}_m =
+\sqrt{p_{m,c}}\,\mathbf{w}_{m,c}s_{m,c}
++
+\sum_{u \in K_m}\sqrt{p_{m,u}}\,\mathbf{w}_{m,u}s_{m,u}
+\]
+        </div>
+        <p class="formula-note">공통 스트림과 사용자별 전용 스트림을 함께 전송하는 1-layer RSMA 구조를 요약한 식이다.</p>
       </div>
 
       <h3>3.3 A3 기반 핸드오버 모델</h3>
@@ -68,9 +93,16 @@
         네트워크 계층에서는 A3 기반 핸드오버 규칙과 CIO를 사용해 접속 셀을 조정한다. 이는 혼잡 셀의 사용자를 주변 셀로 분산시키는
         핵심 수단이며, 핑퐁 현상을 줄이기 위해 안정적인 제어가 필요하다.
       </p>
-      <div class="asset-placeholder">
-        <p class="asset-label">수식 5 위치</p>
-        <p>A3 핸드오버 조건식 PNG 삽입 예정</p>
+      <div class="formula-card">
+        <p class="formula-title">A3 핸드오버 조건</p>
+        <div class="formula-math">
+\[
+\mathrm{RSRP}_{n,u} + O_{c,n} - \mathrm{Hys}
+\ge
+\mathrm{RSRP}_{p,u} + O_{c,p} + O_{A3}
+\]
+        </div>
+        <p class="formula-note">대상 셀과 서빙 셀의 측정값 차이에 CIO와 히스테리시스를 반영해 핸드오버 여부를 결정한다.</p>
       </div>
 
       <h3>3.4 처리량 및 부하 모델</h3>
@@ -84,9 +116,20 @@
         최종적으로 본 연구는 처리량을 높이면서도 부하 불균형을 줄이는 공동 최적화 문제를 정의한다. 즉, 개별 링크 성능이 아니라
         네트워크 전체 자원 활용을 더 잘 만드는 방향으로 문제를 설정했다.
       </p>
-      <div class="asset-placeholder">
-        <p class="asset-label">수식 4 위치</p>
-        <p>부하 불균형 지표 및 전체 목적 함수 PNG 삽입 예정</p>
+      <div class="formula-card">
+        <p class="formula-title">부하 불균형과 목적 함수</p>
+        <div class="formula-math">
+\[
+\sigma_l =
+\sqrt{
+\frac{1}{|M|}
+\sum_{m \in M}(l_m-\bar l)^2
+},
+\qquad
+J = w_T \tilde{T} + w_L \left(1-\tilde{\sigma}\right)
+\]
+        </div>
+        <p class="formula-note">셀 간 부하 편차를 줄이면서도 전체 처리량을 높이는 방향으로 공동 최적화를 수행한다.</p>
       </div>
     </section>
 
@@ -113,9 +156,19 @@
           <p>처리량과 부하 분산을 함께 반영해 두 성능이 균형 있게 좋아지도록 구성한다.</p>
         </article>
       </div>
-      <div class="asset-placeholder">
-        <p class="asset-label">수식 7 위치</p>
-        <p>상태 공간, 행동 공간, 보상 함수 요약 PNG 삽입 예정</p>
+      <div class="formula-card">
+        <p class="formula-title">MDP 정식화</p>
+        <div class="formula-math">
+\[
+\mathcal{M} = (S, A, P, r, \gamma),
+\qquad
+\mathbf{s}_t =
+\left[
+  l(t), \Delta l(t), q(t), \eta(t), c(t), \phi(t)
+\right]
+\]
+        </div>
+        <p class="formula-note">네트워크 상태를 하나의 전역 상태 벡터로 묶고, 강화학습 문제로 정식화한다.</p>
       </div>
 
       <h3>4.3 TD-MPC2 알고리즘</h3>
@@ -140,9 +193,16 @@
         <p class="asset-label">그림 2 위치</p>
         <p>TD-MPC2 기반 멀티 타임스케일 자원 최적화 프레임워크 PNG 삽입 예정</p>
       </div>
-      <div class="asset-placeholder">
-        <p class="asset-label">수식 5 위치</p>
-        <p>TD-MPC2 계획 목적 함수 또는 잠재 공간 업데이트식 PNG 삽입 예정</p>
+      <div class="formula-card">
+        <p class="formula-title">잠재 공간 기반 예측</p>
+        <div class="formula-math">
+\[
+\hat{\mathbf{z}}_{t+1} = f_{\theta}(\mathbf{z}_t, \mathbf{a}_t),
+\qquad
+\hat{r}_t = r_{\theta}(\mathbf{z}_t, \mathbf{a}_t)
+\]
+        </div>
+        <p class="formula-note">TD-MPC2는 잠재 공간에서 다음 상태와 보상을 예측하며 미래 행동을 계획한다.</p>
       </div>
     </section>
   </main>
