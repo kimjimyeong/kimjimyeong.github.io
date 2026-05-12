@@ -10,7 +10,7 @@
   --accent: #7f6c58;
   --accent-soft: #efe8de;
   --shadow: 0 18px 36px rgba(112, 94, 74, 0.08);
-  --max-width: 920px;
+  --max-width: 1280px;
 }
 
 * {
@@ -25,6 +25,7 @@ body {
   margin: 0;
   background: linear-gradient(180deg, #fefdfb 0%, var(--bg) 100%);
   color: var(--text);
+  font-size: 16.5px;
   font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
 }
 
@@ -46,7 +47,7 @@ a:hover {
 .site-header-inner,
 .page,
 .site-footer-inner {
-  width: min(calc(100% - 32px), var(--max-width));
+  width: min(calc(100% - 64px), var(--max-width));
   margin: 0 auto;
 }
 
@@ -54,16 +55,16 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  gap: 20px;
-  padding: 18px 0 14px;
+  gap: 24px;
+  padding: 24px 0 18px;
 }
 
 .site-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  padding: 8px 0 0;
-  font-size: 0.94rem;
+  gap: 18px;
+  padding: 12px 0 0;
+  font-size: 0.98rem;
   background: transparent;
   border: 0;
   border-top: 1px solid var(--line);
@@ -71,7 +72,7 @@ a:hover {
 
 .site-nav a {
   color: var(--muted);
-  padding: 6px 0;
+  padding: 8px 0;
   border-radius: 0;
   border-bottom: 1px solid transparent;
   transition: color 160ms ease, border-color 160ms ease;
@@ -91,11 +92,11 @@ a:hover {
 }
 
 .page {
-  padding: 34px 0 64px;
+  padding: 48px 0 82px;
 }
 
 .hero {
-  padding-bottom: 18px;
+  padding-bottom: 26px;
   border-bottom: 1px solid var(--strong-line);
   position: relative;
 }
@@ -133,24 +134,24 @@ h4 {
 }
 
 h1 {
-  font-size: clamp(2rem, 3.8vw, 3rem);
-  margin-bottom: 14px;
+  font-size: clamp(2.45rem, 4vw, 3.9rem);
+  margin-bottom: 18px;
   letter-spacing: -0.02em;
 }
 
 h2 {
-  font-size: 1.42rem;
-  margin-bottom: 12px;
+  font-size: 1.72rem;
+  margin-bottom: 16px;
 }
 
 h3 {
-  font-size: 1.02rem;
-  margin-bottom: 8px;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 
 h4 {
-  font-size: 0.98rem;
-  margin-bottom: 8px;
+  font-size: 1.06rem;
+  margin-bottom: 10px;
 }
 
 p,
@@ -158,12 +159,12 @@ li,
 td,
 th {
   margin: 0 0 12px;
-  line-height: 1.78;
+  line-height: 1.84;
   word-break: keep-all;
 }
 
 .hero-home h1 {
-  max-width: 760px;
+  max-width: 1040px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -174,7 +175,7 @@ th {
 }
 
 .hero-meta:first-of-type {
-  margin-top: 6px;
+  margin-top: 10px;
   color: var(--text);
   font-weight: 600;
 }
@@ -183,9 +184,9 @@ th {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 14px;
-  font-size: 0.96rem;
+  gap: 18px;
+  margin-top: 18px;
+  font-size: 1rem;
 }
 
 .paper-links a {
@@ -194,10 +195,10 @@ th {
 }
 
 .keyword-line {
-  margin-top: 14px;
+  margin-top: 18px;
   margin-bottom: 0;
   color: var(--muted);
-  font-size: 0.94rem;
+  font-size: 1rem;
 }
 
 .keyword-line strong {
@@ -206,7 +207,7 @@ th {
 }
 
 section {
-  margin-top: 28px;
+  margin-top: 40px;
 }
 
 .doc-section {
@@ -215,7 +216,7 @@ section {
 
 .doc-section + .doc-section {
   border-top: 1px solid var(--line);
-  padding-top: 24px;
+  padding-top: 34px;
 }
 
 .hero p,
@@ -224,7 +225,7 @@ section {
 }
 
 .lead {
-  font-size: 1.04rem;
+  font-size: 1.1rem;
   color: var(--text);
 }
 
@@ -238,7 +239,7 @@ section {
 
 .abstract-block {
   margin-top: 8px;
-  padding: 18px 20px 16px;
+  padding: 26px 30px 24px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(250, 247, 242, 0.98) 100%);
   border: 1px solid rgba(203, 191, 176, 0.92);
   border-left: 3px solid var(--accent);
@@ -263,30 +264,30 @@ section {
 .metric-grid,
 .formula-grid {
   display: grid;
-  gap: 16px;
+  gap: 22px;
 }
 
 .section-grid {
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .metric-grid {
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .formula-grid {
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
 }
 
 .info-card,
 .metric-card {
-  padding: 18px;
+  padding: 22px;
   background: var(--paper);
   border: 1px solid var(--line);
 }
 
 .formula-card {
-  margin-top: 18px;
+  margin-top: 22px;
   padding: 0;
   background: transparent;
   border: 0;
@@ -311,7 +312,8 @@ section {
   margin: 0;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 0;
+  padding: 6px 0;
+  font-size: clamp(1.22rem, 1.25vw, 1.54rem);
 }
 
 .formula-card:not(.formula-table) .formula-title,
@@ -322,7 +324,7 @@ section {
 .formula-table {
   display: grid;
   gap: 14px;
-  margin-top: 18px;
+  margin-top: 22px;
 }
 
 .formula-table-group + .formula-table-group {
@@ -337,12 +339,12 @@ section {
 }
 
 .formula-table .formula-math {
-  font-size: 0.94rem;
+  font-size: 1rem;
 }
 
 .subsection-block {
-  margin-top: 28px;
-  padding-left: 30px;
+  margin-top: 34px;
+  padding-left: 44px;
   border-left: 1px solid var(--line);
 }
 
@@ -351,39 +353,39 @@ section {
 }
 
 .nested-block {
-  margin-top: 20px;
-  padding-left: 24px;
+  margin-top: 24px;
+  padding-left: 34px;
   border-left: 1px solid rgba(203, 191, 176, 0.85);
 }
 
 .formula-stack {
   display: grid;
-  gap: 10px;
-  margin-top: 18px;
+  gap: 18px;
+  margin-top: 22px;
 }
 
 .paper-table-wrap {
-  margin-top: 18px;
+  margin-top: 24px;
   overflow-x: auto;
 }
 
 .paper-table {
   width: 100%;
-  min-width: 620px;
+  min-width: 860px;
   border-collapse: collapse;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .paper-table caption {
   caption-side: top;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
   color: var(--text);
   font-weight: 700;
   text-align: left;
 }
 
 .paper-table thead th {
-  padding: 10px 12px;
+  padding: 12px 14px;
   color: var(--text);
   font-weight: 700;
   text-align: left;
@@ -393,7 +395,7 @@ section {
 
 .paper-table tbody td,
 .paper-table tbody th {
-  padding: 9px 12px;
+  padding: 11px 14px;
   vertical-align: top;
   border-bottom: 1px solid var(--line);
 }
@@ -404,8 +406,8 @@ section {
 }
 
 .paper-figure {
-  width: min(100%, 740px);
-  margin: 24px auto 0;
+  width: min(100%, 1040px);
+  margin: 30px auto 0;
 }
 
 .paper-figure img {
@@ -415,7 +417,7 @@ section {
 }
 
 .paper-figure-wide {
-  width: 100%;
+  width: min(100%, 1220px);
 }
 
 .metric-card {
@@ -424,7 +426,7 @@ section {
 
 .metric-value {
   margin-bottom: 4px;
-  font-size: 2rem;
+  font-size: 2.3rem;
   line-height: 1.1;
   font-weight: 700;
   color: var(--text);
@@ -438,7 +440,7 @@ section {
 
 .metric-detail {
   color: var(--muted);
-  font-size: 0.94rem;
+  font-size: 0.98rem;
 }
 
 .asset-placeholder {
@@ -508,7 +510,7 @@ section {
 .plain-list,
 .reference-list {
   margin: 0;
-  padding-left: 24px;
+  padding-left: 28px;
 }
 
 .section-list li,
@@ -545,7 +547,7 @@ section {
   border-collapse: collapse;
   border-top: 1px solid var(--strong-line);
   border-bottom: 1px solid var(--strong-line);
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .data-table th,
@@ -581,12 +583,18 @@ section {
 }
 
 .site-footer-inner {
-  padding: 16px 0 30px;
+  padding: 20px 0 36px;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.94rem;
 }
 
 @media (max-width: 720px) {
+  .site-header-inner,
+  .page,
+  .site-footer-inner {
+    width: min(calc(100% - 24px), var(--max-width));
+  }
+
   .site-header-inner {
     flex-direction: column;
     align-items: flex-start;
@@ -624,5 +632,9 @@ section {
 
   .nested-block {
     padding-left: 16px;
+  }
+
+  .paper-table {
+    min-width: 680px;
   }
 }
