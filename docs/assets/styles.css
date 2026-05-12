@@ -337,6 +337,22 @@ section {
   font-size: 0.94rem;
 }
 
+.paper-figure {
+  margin: 18px 0 0;
+}
+
+.paper-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.paper-figure figcaption {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
 .metric-card {
   background: linear-gradient(180deg, #fffdfa 0%, #f9f5ee 100%);
 }

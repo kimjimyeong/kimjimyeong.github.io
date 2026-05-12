@@ -48,13 +48,13 @@
       <h2>2. 관련 연구</h2>
       <h3>2.1 RSMA 자원 최적화</h3>
       <p>
-        기존 RSMA 연구는 스펙트럼 효율과 간섭 제어 측면에서 강점을 보여주었지만, 반복적 수치 최적화에 크게 의존하는 경우가 많았다.
-        따라서 실제 운용 환경에서는 계산량을 줄이면서도 공정성을 함께 고려할 수 있는 구조가 필요하다.
+        기존 RSMA 연구는 스펙트럼 효율과 간섭 제어 측면에서 강점을 보였지만, 반복적인 수치 최적화에 의존하는 경우가 많았다.
+        본 연구는 실제 이동 환경에서 계산 부담을 줄이면서도 처리량과 부하 분산을 함께 고려할 수 있는 방향에 초점을 맞췄다.
       </p>
       <h3>2.2 MLB</h3>
       <p>
-        MLB는 셀 간 부하 불균형을 완화하기 위한 대표적 기법이지만, 기존 연구는 주로 네트워크 계층 제어에 초점을 맞춰 왔다.
-        본 연구는 여기에 RSMA의 물리 계층 특성을 함께 반영해 두 계층을 연계하는 방향으로 확장한다.
+        MLB는 셀 간 부하 불균형을 완화하기 위한 대표적인 기법이지만, 주로 네트워크 계층 제어 중심으로 다뤄져 왔다.
+        본 연구는 여기에 RSMA의 물리 계층 특성을 결합해 교차 계층 관점의 공동 제어 문제로 확장했다.
       </p>
     </section>
 
@@ -62,63 +62,53 @@
       <h2>3. 시스템 모델</h2>
       <h3>3.1 네트워크 및 채널 모델</h3>
       <p>
-        다중 셀 하향링크 5G MIMO 환경을 가정하고, 사용자 이동성과 셀 간 간섭이 동시에 존재하는 시나리오를 설정했다.
-        채널은 3GPP 기반 모델과 불완전 CSIT 조건을 반영해 실제 운용 상황에 가깝게 구성했다.
+        다중 셀 5G MIMO 환경을 가정하고, 이동 사용자와 셀 간 간섭이 동시에 존재하는 시나리오를 구성했다.
+        채널은 3GPP 기반 모델과 불완전한 CSIT 조건을 반영해 실제적인 전송 환경에 가깝게 설정했다.
       </p>
-      <div class="asset-placeholder">
-        <p class="asset-label">그림 1 위치</p>
-        <p>RSMA 기반 다중 셀 MIMO 하향링크 시스템 모델 PNG 삽입 예정</p>
-      </div>
+      <figure class="paper-figure">
+        <img src="../images/figure1.png" alt="Figure 1">
+        <figcaption>Figure 1.</figcaption>
+      </figure>
 
       <h3>3.2 저복잡도 사용자 선택 기반 RSMA 전송 모델</h3>
       <p>
-        제안 기법은 모든 사용자를 무겁게 최적화하는 대신, 사용자 선택 단계에서 PF 지표와 채널 공간 상관도를 함께 고려한다.
-        이를 통해 공통 스트림 병목을 줄이면서도 특정 사용자에게 자원이 과도하게 몰리는 현상을 완화한다.
+        제안 기법은 모든 사용자를 동시에 최적화하기보다, 사용자 선택 단계에서 PF 지표와 채널 공간 직교성을 함께 고려한다.
+        이를 통해 공통 스트림 복호 부담을 줄이면서도 자원 집중으로 인한 성능 왜곡을 완화한다.
       </p>
       <div class="formula-card">
-        <p class="formula-title">RSMA 송신 신호</p>
-        <div class="formula-math">
 \[
 \mathbf{x}_m =
 \sqrt{p_{m,c}}\,\mathbf{w}_{m,c}s_{m,c}
 +
 \sum_{u \in K_m}\sqrt{p_{m,u}}\,\mathbf{w}_{m,u}s_{m,u}
 \]
-        </div>
-        <p class="formula-note">공통 스트림과 사용자별 전용 스트림을 함께 전송하는 1-layer RSMA 구조를 요약한 식이다.</p>
       </div>
 
       <h3>3.3 A3 기반 핸드오버 모델</h3>
       <p>
-        네트워크 계층에서는 A3 기반 핸드오버 규칙과 CIO를 사용해 접속 셀을 조정한다. 이는 혼잡 셀의 사용자를 주변 셀로 분산시키는
-        핵심 수단이며, 핑퐁 현상을 줄이기 위해 안정적인 제어가 필요하다.
+        네트워크 계층에서는 A3 기반 핸드오버 규칙과 CIO를 이용해 접속 셀을 조정한다.
+        이 과정은 사용자 분산과 실패 핸드오버 억제를 동시에 고려하는 제어 변수로 사용된다.
       </p>
       <div class="formula-card">
-        <p class="formula-title">A3 핸드오버 조건</p>
-        <div class="formula-math">
 \[
 \mathrm{RSRP}_{n,u} + O_{c,n} - \mathrm{Hys}
 \ge
 \mathrm{RSRP}_{p,u} + O_{c,p} + O_{A3}
 \]
-        </div>
-        <p class="formula-note">대상 셀과 서빙 셀의 측정값 차이에 CIO와 히스테리시스를 반영해 핸드오버 여부를 결정한다.</p>
       </div>
 
       <h3>3.4 처리량 및 부하 모델</h3>
       <p>
-        성능 평가는 단순 전송률이 아니라 실제 처리량과 셀별 부하 수준을 함께 본다. 이를 통해 전송 효율과 네트워크 공평성을 동시에
-        평가할 수 있도록 했다.
+        성능 평가는 단순 전송률이 아니라 사용자 처리량과 셀 간 부하 편차를 함께 본다.
+        이를 통해 전송 효율과 네트워크 균형을 동시에 반영하는 목적 구성이 가능해진다.
       </p>
 
       <h3>3.5 문제 정의</h3>
       <p>
-        최종적으로 본 연구는 처리량을 높이면서도 부하 불균형을 줄이는 공동 최적화 문제를 정의한다. 즉, 개별 링크 성능이 아니라
-        네트워크 전체 자원 활용을 더 잘 만드는 방향으로 문제를 설정했다.
+        최종적으로 본 연구는 처리량을 높이면서도 부하 불균형을 줄이는 공동 최적화 문제를 정의한다.
+        즉, 개별 링크 성능보다 네트워크 전체 자원 사용의 균형을 함께 고려하는 형태다.
       </p>
       <div class="formula-card">
-        <p class="formula-title">부하 불균형과 목적 함수</p>
-        <div class="formula-math">
 \[
 \sigma_l =
 \sqrt{
@@ -128,8 +118,6 @@
 \qquad
 J = w_T \tilde{T} + w_L \left(1-\tilde{\sigma}\right)
 \]
-        </div>
-        <p class="formula-note">셀 간 부하 편차를 줄이면서도 전체 처리량을 높이는 방향으로 공동 최적화를 수행한다.</p>
       </div>
     </section>
 
@@ -137,28 +125,26 @@ J = w_T \tilde{T} + w_L \left(1-\tilde{\sigma}\right)
       <h2>4. TD-MPC2 기반 자원 최적화 프레임워크</h2>
       <h3>4.1 멀티 타임스케일 교차 계층 제어 구조</h3>
       <p>
-        RSMA 분할 비율은 빠르게 조정되어야 하고, CIO는 조금 더 천천히 안정적으로 갱신되어야 한다. 본 연구는 이 차이를 반영해
-        멀티 타임스케일 제어 구조를 구성했다.
+        RSMA 분할 비율은 빠르게 조정하고, CIO는 상대적으로 느린 주기로 갱신하는 멀티 타임스케일 구조를 사용했다.
+        이는 두 제어 변수의 시간적 특성을 분리해 학습 안정성과 제어 효율을 함께 확보하기 위한 구성이다.
       </p>
 
       <h3>4.2 MDP 정식화</h3>
       <div class="section-grid">
         <article class="info-card">
           <h3>4.2.1 상태 공간</h3>
-          <p>현재 셀 부하, 병목 수준, 제어값 등 네트워크 상태를 함께 관측한다.</p>
+          <p>셀 부하, 부하 변화율, 큐 상태, 분할 비율, CIO, 사용자 분포를 상태로 구성했다.</p>
         </article>
         <article class="info-card">
           <h3>4.2.2 행동 공간</h3>
-          <p>에이전트는 RSMA 분할 비율과 CIO를 조절해 전송과 핸드오버를 동시에 제어한다.</p>
+          <p>에이전트는 각 셀의 RSMA 분할 비율과 CIO를 함께 조정한다.</p>
         </article>
         <article class="info-card">
           <h3>4.2.3 보상 함수</h3>
-          <p>처리량과 부하 분산을 함께 반영해 두 성능이 균형 있게 좋아지도록 구성한다.</p>
+          <p>처리량과 부하 분산을 함께 반영해 두 성능 지표의 균형을 유도했다.</p>
         </article>
       </div>
       <div class="formula-card">
-        <p class="formula-title">MDP 정식화</p>
-        <div class="formula-math">
 \[
 \mathcal{M} = (S, A, P, r, \gamma),
 \qquad
@@ -167,49 +153,43 @@ J = w_T \tilde{T} + w_L \left(1-\tilde{\sigma}\right)
   l(t), \Delta l(t), q(t), \eta(t), c(t), \phi(t)
 \right]
 \]
-        </div>
-        <p class="formula-note">네트워크 상태를 하나의 전역 상태 벡터로 묶고, 강화학습 문제로 정식화한다.</p>
       </div>
 
       <h3>4.3 TD-MPC2 알고리즘</h3>
       <div class="section-grid">
         <article class="info-card">
           <h3>4.3.1 월드 모델</h3>
-          <p>환경의 변화를 내부적으로 예측할 수 있도록 잠재 공간 기반 모델을 학습한다.</p>
+          <p>환경의 전이를 잠재 공간에서 예측해 실제 상호작용 부담을 줄였다.</p>
         </article>
         <article class="info-card">
           <h3>4.3.2 잠재 공간 기반 계획</h3>
-          <p>미래 상태를 미리 시뮬레이션하며 더 안정적인 행동을 선택한다.</p>
+          <p>미래 상태를 예측하면서 더 안정적인 행동을 선택하도록 구성했다.</p>
         </article>
         <article class="info-card">
           <h3>4.3.3 네트워크 최적화 및 파라미터 갱신</h3>
-          <p>학습된 정책을 바탕으로 반복적으로 자원 제어 성능을 개선한다.</p>
+          <p>반복적인 업데이트를 통해 제어 정책과 예측 모델을 함께 개선했다.</p>
         </article>
       </div>
       <p>
-        소개 수준에서 정리하면, TD-MPC2는 시행착오를 줄이면서도 동적인 통신 환경에 맞는 제어 정책을 더 빠르고 안정적으로 찾는 방법이다.
+        요약하면 TD-MPC2는 미래 상태를 직접 예측하면서, 빠르게 변하는 무선 환경에 맞는 제어 정책을 찾는 데 초점을 둔 모델 기반 강화학습 방법이다.
       </p>
-      <div class="asset-placeholder">
-        <p class="asset-label">그림 2 위치</p>
-        <p>TD-MPC2 기반 멀티 타임스케일 자원 최적화 프레임워크 PNG 삽입 예정</p>
-      </div>
+      <figure class="paper-figure">
+        <img src="../images/figure2.png" alt="Figure 2">
+        <figcaption>Figure 2.</figcaption>
+      </figure>
       <div class="formula-card">
-        <p class="formula-title">잠재 공간 기반 예측</p>
-        <div class="formula-math">
 \[
 \hat{\mathbf{z}}_{t+1} = f_{\theta}(\mathbf{z}_t, \mathbf{a}_t),
 \qquad
 \hat{r}_t = r_{\theta}(\mathbf{z}_t, \mathbf{a}_t)
 \]
-        </div>
-        <p class="formula-note">TD-MPC2는 잠재 공간에서 다음 상태와 보상을 예측하며 미래 행동을 계획한다.</p>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="site-footer-inner">
-      <p>최종 업데이트: 2026년 5월 12일.</p>
+      <p>최종 업데이트: 2026년 5월 12일</p>
     </div>
   </footer>
 </body>
