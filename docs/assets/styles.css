@@ -10,7 +10,7 @@
   --accent: #7f6c58;
   --accent-soft: #efe8de;
   --shadow: 0 18px 36px rgba(112, 94, 74, 0.08);
-  --max-width: 1280px;
+  --max-width: 1360px;
 }
 
 * {
@@ -47,7 +47,7 @@ a:hover {
 .site-header-inner,
 .page,
 .site-footer-inner {
-  width: min(calc(100% - 64px), var(--max-width));
+  width: min(calc(100% - 48px), var(--max-width));
   margin: 0 auto;
 }
 
@@ -276,7 +276,7 @@ section {
 }
 
 .formula-grid {
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
 }
 
 .info-card,
@@ -313,7 +313,7 @@ section {
   overflow-x: auto;
   overflow-y: hidden;
   padding: 6px 0;
-  font-size: clamp(1.22rem, 1.25vw, 1.54rem);
+  font-size: clamp(1.34rem, 1.55vw, 1.8rem);
 }
 
 .formula-card:not(.formula-table) .formula-title,
@@ -373,7 +373,7 @@ section {
   width: 100%;
   min-width: 860px;
   border-collapse: collapse;
-  font-size: 1rem;
+  font-size: 1.06rem;
 }
 
 .paper-table caption {
@@ -382,6 +382,7 @@ section {
   color: var(--text);
   font-weight: 700;
   text-align: left;
+  font-size: 1.12rem;
 }
 
 .paper-table thead th {
@@ -406,7 +407,7 @@ section {
 }
 
 .paper-figure {
-  width: min(100%, 1040px);
+  width: min(100%, 1120px);
   margin: 30px auto 0;
 }
 
@@ -417,7 +418,7 @@ section {
 }
 
 .paper-figure-wide {
-  width: min(100%, 1220px);
+  width: 100%;
 }
 
 .metric-card {
