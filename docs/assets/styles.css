@@ -157,6 +157,42 @@ h4 {
   margin-bottom: 10px;
 }
 
+.doc-section > h2,
+.subsection-block > h3,
+.nested-block > h4 {
+  position: relative;
+  padding-left: 20px;
+}
+
+.doc-section > h2::before,
+.subsection-block > h3::before,
+.nested-block > h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  border-radius: 999px;
+  background: rgba(141, 84, 43, 0.9);
+}
+
+.doc-section > h2::before {
+  top: 0.78em;
+  width: 12px;
+  height: 3px;
+}
+
+.subsection-block > h3::before {
+  top: 0.74em;
+  width: 10px;
+  height: 2px;
+}
+
+.nested-block > h4::before {
+  top: 0.72em;
+  width: 8px;
+  height: 2px;
+  background: rgba(141, 84, 43, 0.7);
+}
+
 p,
 li,
 td,
@@ -672,6 +708,21 @@ section {
 
   .nested-block {
     padding-left: 16px;
+  }
+
+  .doc-section > h2,
+  .subsection-block > h3,
+  .nested-block > h4 {
+    padding-left: 16px;
+  }
+
+  .doc-section > h2::before {
+    width: 10px;
+  }
+
+  .subsection-block > h3::before,
+  .nested-block > h4::before {
+    width: 8px;
   }
 
   .paper-table {
